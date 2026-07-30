@@ -1,0 +1,6 @@
+{
+  "name": "Trugrum.com",
+  "description": "The Next Generation of Wealth Intelligence & Financial Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
