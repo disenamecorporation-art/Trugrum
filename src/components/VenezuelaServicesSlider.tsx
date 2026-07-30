@@ -61,9 +61,6 @@ export const VenezuelaServicesSlider: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-light tracking-widest uppercase mb-4 shadow-sm">
-            <span>Ecosistema Financiero en Venezuela</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl font-light text-[#0B132B] tracking-tight mb-4">
             Banner de Servicios y <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-700">Infraestructura Fintech</span>
           </h2>

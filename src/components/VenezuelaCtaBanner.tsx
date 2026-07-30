@@ -19,11 +19,6 @@ export const VenezuelaCtaBanner: React.FC<VenezuelaCtaBannerProps> = ({ onOpenAu
 
           {/* Gran Texto */}
           <div className="relative z-10 max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/20 text-white text-xs font-medium uppercase tracking-widest backdrop-blur-md">
-              <Zap className="w-3.5 h-3.5 text-white animate-pulse" />
-              <span>Ecosistema Financiero Venezolano 2026</span>
-            </div>
-
             <h2 className="text-3xl sm:text-5xl font-light text-white tracking-tight leading-tight">
               Transforme y Digitalice su <span className="font-semibold text-slate-950">Gestión de Capital Hoy</span>
             </h2>

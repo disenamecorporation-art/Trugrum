@@ -8,9 +8,6 @@ export const VenezuelaEcosystemInfo: React.FC = () => {
         
         {/* Cabecera */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-light tracking-widest uppercase mb-4 shadow-sm">
-            <span>Radiografía Económica y Financiera</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-light text-[#0B132B] tracking-tight mb-6">
             Ecosistema Financiero en <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-700">Venezuela</span>
           </h2>

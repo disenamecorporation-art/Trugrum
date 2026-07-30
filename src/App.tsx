@@ -14,8 +14,8 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'landing' | 'dashboard'>('landing');
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Default to logged in so the live terminal is fully visible and impressive!
-  const [userEmail, setUserEmail] = useState('alexander.vance@trugrum.com');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
   const [isAiOpen, setIsAiOpen] = useState(false);
 
   const handleOpenAuth = (mode: 'login' | 'register') => {

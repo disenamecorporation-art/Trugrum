@@ -1,6 +1,6 @@
 {
-  "name": "Trugrum.com",
-  "description": "The Next Generation of Wealth Intelligence & Financial Platform",
+  "name": "Ecosistema Financiero Venezuela",
+  "description": "Plataforma de servicios financieros, banca digital, BNPL y pasarelas de pago en Venezuela",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

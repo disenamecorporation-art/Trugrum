@@ -19,12 +19,6 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
           
           {/* Columna Izquierda: Titular y CTA */}
           <div className="lg:col-span-7 text-center lg:text-left">
-            
-            {/* Insignia */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/15 border border-blue-500/40 text-blue-300 text-xs font-light tracking-widest uppercase mb-6 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-              <Zap className="w-3.5 h-3.5 text-blue-400 animate-pulse" />
-              <span>Ecosistema Financiero Venezolano 2026</span>
-            </div>
 
             {/* Titular */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[1.1] mb-6">
