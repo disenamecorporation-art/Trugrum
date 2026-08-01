@@ -22,12 +22,12 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
 
             {/* Titular */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[1.1] mb-6">
-              La Transformación Digital de la <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400">Banca y Finanzas en Venezuela</span>
+              Conectamos tus activos con <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400">negocios emergentes y de crecimiento real</span>
             </h1>
 
             {/* Subtítulo con la nueva información solicitada */}
             <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-10">
-              El sistema de servicios financieros en Venezuela se ha transformado notablemente en los últimos años, pasando de la banca tradicional de taquilla a una economía altamente digitalizada respaldada por el sistema de Pago Móvil, las billeteras en divisas, el modelo BNPL (Buy Now, Pay Later) y las pasarelas de pago para e-commerce.
+              Trugrum es una plataforma en modalidad de fondo de inversión orientada a la captación de criptoactivos (stablecoin USDT, USDC) vinculándolos a unidades de negocios, proyectos emergentes y de crecimiento sostenido, permitiendo rendimientos atractivos y el resguardo de los activos.
             </p>
 
             {/* Botones CTA */}
@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
                 onClick={onGetStarted}
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-emerald-500 text-white font-medium tracking-wide text-sm hover:shadow-[0_0_35px_rgba(59,130,246,0.5)] transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 group"
               >
-                <span>Acceder al Directorio y Registro</span>
+                <span>Registro directo</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -49,19 +49,19 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
               </button>
             </div>
 
-            {/* Métricas del Ecosistema */}
+            {/* Métricas del Fondo */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-blue-500/20 max-w-lg mx-auto lg:mx-0">
               <div>
-                <div className="text-2xl sm:text-3xl font-light text-white">Cashea / Kredi</div>
-                <div className="text-xs text-slate-400 font-light mt-1">Líderes BNPL</div>
+                <div className="text-2xl sm:text-3xl font-light text-white">+18.5%</div>
+                <div className="text-xs text-slate-400 font-light mt-1">Rendimiento Anual</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-light text-blue-400">P2P & C2P</div>
-                <div className="text-xs text-slate-400 font-light mt-1">Pago Móvil Masivo</div>
+                <div className="text-2xl sm:text-3xl font-light text-blue-400">USDT/USDC</div>
+                <div className="text-xs text-slate-400 font-light mt-1">Activos Soportados</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-light text-white">SUDEBAN</div>
-                <div className="text-xs text-slate-400 font-light mt-1">Regulación Bancaria</div>
+                <div className="text-2xl sm:text-3xl font-light text-white">100%</div>
+                <div className="text-xs text-slate-400 font-light mt-1">Respaldo Real</div>
               </div>
             </div>
 
@@ -73,21 +73,21 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
             {/* Anillo de brillo de fondo */}
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-emerald-500/30 rounded-3xl blur-2xl transform rotate-6 scale-95" />
 
-            {/* Tarjeta de Terminal de Cristal */}
+            {/* Tarjeta de Fondo de Inversión */}
             <div className="relative w-full max-w-md bg-[#162038]/95 backdrop-blur-2xl p-6 sm:p-8 rounded-3xl shadow-2xl border border-blue-500/40 text-slate-100 animate-float">
               
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-blue-500/20">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-2xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center">
-                    <Landmark className="w-5 h-5 text-blue-400" />
+                    <ShieldCheck className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-white tracking-wide">Ecosistema Financiero</h3>
-                    <p className="text-xs text-blue-300 font-light">Venezuela 2026 • Digitalizado</p>
+                    <h3 className="text-sm font-medium text-white tracking-wide">Fondo de Inversión</h3>
+                    <p className="text-xs text-blue-300 font-light">Trugrum • Capital Activo</p>
                   </div>
                 </div>
                 <span className="px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-[11px] font-medium border border-blue-500/30">
-                  Activo
+                  Operativo
                 </span>
               </div>
 
@@ -97,14 +97,14 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
                 <div className="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-700/50 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center">
-                      <CreditCard className="w-4 h-4 text-emerald-400" />
+                      <TrendingUp className="w-4 h-4 text-emerald-400" />
                     </div>
                     <div>
-                      <div className="text-xs font-medium text-white">Crédito Digital (BNPL)</div>
-                      <div className="text-[11px] text-slate-400">Cashea & Kredi (Cuotas sin interés)</div>
+                      <div className="text-xs font-medium text-white">Proyectos Emergentes</div>
+                      <div className="text-[11px] text-slate-400">Crecimiento y expansión</div>
                     </div>
                   </div>
-                  <span className="text-xs text-emerald-400 font-medium">Líder</span>
+                  <span className="text-xs text-emerald-400 font-medium">Activo</span>
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-700/50 flex items-center justify-between">
@@ -113,24 +113,24 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
                       <Landmark className="w-4 h-4 text-blue-400" />
                     </div>
                     <div>
-                      <div className="text-xs font-medium text-white">Banca y Pago Móvil</div>
-                      <div className="text-[11px] text-slate-400">Banesco, Mercantil, Bancamiga, BDV</div>
+                      <div className="text-xs font-medium text-white">Unidades de Negocios</div>
+                      <div className="text-[11px] text-slate-400">Crecimiento sostenido</div>
                     </div>
                   </div>
-                  <span className="text-xs text-blue-400 font-medium">P2P/C2P</span>
+                  <span className="text-xs text-blue-400 font-medium">Estable</span>
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-700/50 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-xl bg-purple-500/20 flex items-center justify-center">
-                      <Smartphone className="w-4 h-4 text-purple-400" />
+                      <ShieldCheck className="w-4 h-4 text-purple-400" />
                     </div>
                     <div>
-                      <div className="text-xs font-medium text-white">Billeteras & Remesas P2P</div>
-                      <div className="text-[11px] text-slate-400">Zinli, Wally, El Dorado, Binance</div>
+                      <div className="text-xs font-medium text-white">Resguardo de Activos</div>
+                      <div className="text-[11px] text-slate-400">Seguridad y respaldo</div>
                     </div>
                   </div>
-                  <span className="text-xs text-purple-400 font-medium">Global</span>
+                  <span className="text-xs text-purple-400 font-medium">En Alta</span>
                 </div>
 
               </div>
@@ -138,11 +138,11 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
               {/* Insignia Flotante */}
               <div className="absolute -top-6 -right-6 bg-[#0B132B]/95 border border-blue-500/50 p-4 rounded-2xl shadow-2xl flex items-center gap-3 animate-float-delayed backdrop-blur-md">
                 <div className="w-8 h-8 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                  <Globe2 className="w-4 h-4 text-blue-400" />
+                  <ShieldCheck className="w-4 h-4 text-blue-400" />
                 </div>
                 <div>
-                  <div className="text-[11px] text-slate-400">Interoperabilidad</div>
-                  <div className="text-xs font-medium text-white">100% Digital</div>
+                  <div className="text-[11px] text-slate-400">Resguardo Seguro</div>
+                  <div className="text-xs font-medium text-white">USDT / USDC</div>
                 </div>
               </div>
 
@@ -150,9 +150,9 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
               <div className="flex items-center justify-between pt-4 border-t border-blue-500/20 text-xs text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <Award className="w-3.5 h-3.5 text-blue-400" />
-                  Ecosistema Verificado
+                  Garantía de Rendimiento
                 </span>
-                <span className="text-blue-400 font-medium">BCV & SUDEBAN</span>
+                <span className="text-blue-400 font-medium">Tasas Atractivas</span>
               </div>
 
             </div>

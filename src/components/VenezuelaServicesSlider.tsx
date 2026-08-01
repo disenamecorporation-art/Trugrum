@@ -4,35 +4,27 @@ import { ChevronLeft, ChevronRight, ShieldCheck, Zap, Globe, Smartphone, CreditC
 export const VenezuelaServicesSlider: React.FC = () => {
   const slides = [
     {
-      title: "Crédito Digital & BNPL (Compra Ahora, Paga Después)",
-      subtitle: "La revolución del consumo sin tarjeta tradicional",
-      description: "Plataformas como Cashea y Kredi lideran el financiamiento fraccionado, permitiendo a los usuarios adquirir bienes con una inicial y cuotas sin intereses.",
-      badge: "Líder: Cashea",
-      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
-      icon: <CreditCard className="w-6 h-6 text-emerald-400" />
+      title: "Alimentos",
+      subtitle: "Retails, fast food y restaurante, procesados",
+      description: "Inversión en el sector alimentario, abarcando desde la cadena de suministros retail hasta franquicias de comida rápida y procesamiento de alimentos.",
+      badge: "Sector Alimentario",
+      image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+      icon: <Globe className="w-6 h-6 text-emerald-400" />
     },
     {
-      title: "Banca Tradicional y Canales Digitales SUDEBAN",
-      subtitle: "Infraestructura robusta de Pago Móvil y cuentas en divisas",
-      description: "Banesco, Mercantil, Bancamiga, BNC, BBVA Provincial y BDV ofrecen P2P instantáneo, cuentas custodia USD/EUR y APIs comerciales avanzadas.",
-      badge: "Regulado SUDEBAN",
-      image: "https://images.unsplash.com/photo-1556742049-0a67d5e5223e?auto=format&fit=crop&w=1200&q=80",
-      icon: <ShieldCheck className="w-6 h-6 text-emerald-400" />
-    },
-    {
-      title: "Billeteras Digitales y Tarjetas Internacionales",
-      subtitle: "Zinli, Wally y Ubii Pagos para comercio global y local",
-      description: "Soluciones fintech que emiten tarjetas de débito internacionales virtuales y conectan el ecosistema de bolívares con pasarelas de pago globales.",
-      badge: "Visa / Mastercard",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      title: "Tecnología y Servicios",
+      subtitle: "Desarrollo de software y servicios profesionales",
+      description: "Impulso a la innovación mediante el desarrollo de software a medida y la prestación de servicios profesionales de alto valor agregado.",
+      badge: "Sector Tecnológico",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
       icon: <Smartphone className="w-6 h-6 text-emerald-400" />
     },
     {
-      title: "Remesas y Plataformas P2P Descentralizadas",
-      subtitle: "El Dorado, Binance P2P y Zoom Remesas",
-      description: "Intercambio fluido de bolívares por dólares digitales (USDT, cUSD) y recepción de remesas formales a tasa oficial del Banco Central de Venezuela.",
-      badge: "Alta Liquidez P2P",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80",
+      title: "Commodities",
+      subtitle: "Materias primas básicas en mercados mundiales",
+      description: "Trigo, maíz, soya, café y azúcar. Activos esenciales que se compran y venden en mercados mundiales con alta demanda constante.",
+      badge: "Materias Primas",
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
       icon: <Globe className="w-6 h-6 text-emerald-400" />
     }
   ];
@@ -57,15 +49,15 @@ export const VenezuelaServicesSlider: React.FC = () => {
   const slide = slides[currentIndex];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section id="areas-inversion" className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-light text-[#0B132B] tracking-tight mb-4">
-            Banner de Servicios y <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-700">Infraestructura Fintech</span>
+            Áreas de <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-700">Inversión</span>
           </h2>
           <p className="text-slate-600 font-light text-sm sm:text-base">
-            Explore los pilares de la transformación digital, desde BNPL y Pago Móvil hasta pasarelas de pago y custodia en divisas.
+            Conoce los sectores donde impulsamos el crecimiento y desarrollo sostenible.
           </p>
         </div>
 
@@ -106,7 +98,7 @@ export const VenezuelaServicesSlider: React.FC = () => {
                 onClick={() => alert(`Explorando detalles de: ${slide.title}`)}
                 className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-[#00E676] text-slate-950 font-medium text-xs tracking-wide shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all flex items-center gap-2"
               >
-                <span>Ver Directorio Oficial</span>
+                <span>Explorar Sector</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

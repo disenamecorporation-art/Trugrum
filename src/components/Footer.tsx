@@ -1,7 +1,11 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone, Mail, Instagram, Globe } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenAuth?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenAuth }) => {
   return (
     <footer className="bg-[#0B132B] text-slate-300 py-16 border-t border-emerald-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,7 +13,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
           
           {/* Logo y Descripción */}
-          <div className="md:col-span-4 space-y-4">
+          <div className="md:col-span-5 space-y-4">
             <img 
               src="https://i.postimg.cc/RCQcTtzf/logoweb.png" 
               alt="Trugrum Logo" 
@@ -24,33 +28,47 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Menú Nav Esparcido 1 */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs uppercase font-medium tracking-widest text-white">Navegación</h4>
-            <ul className="space-y-2 text-xs font-light">
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Ecosistema Financiero</a></li>
-              <li><a href="#ecosystem" className="hover:text-emerald-400 transition-colors">Bancos y Servicios</a></li>
-              <li><a href="#features" className="hover:text-emerald-400 transition-colors">Tecnología Fintech</a></li>
+          {/* Contacto */}
+          <div className="md:col-span-4 space-y-3" id="contacto">
+            <h4 className="text-xs uppercase font-medium tracking-widest text-white">Contacto</h4>
+            <ul className="space-y-3 text-xs font-light">
+              <li>
+                <a href="https://wa.me/584244321000" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+                  <Phone className="w-3.5 h-3.5" />
+                  Whatsapp: +58 424-4321000
+                </a>
+              </li>
+              <li>
+                <a href="mailto:Informacion@trugrum.com" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+                  <Mail className="w-3.5 h-3.5" />
+                  Email: Informacion@trugrum.com
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/Trugrum" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+                  <Instagram className="w-3.5 h-3.5" />
+                  Instagram: @Trugrum
+                </a>
+              </li>
+              <li>
+                <a href="https://www.Trugrum.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+                  <Globe className="w-3.5 h-3.5" />
+                  www.Trugrum.com
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Menú Nav Esparcido 2 */}
+          {/* Acceso */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs uppercase font-medium tracking-widest text-white">Servicios Clave</h4>
-            <ul className="space-y-2 text-xs font-light">
-              <li><a href="#ecosystem" className="hover:text-emerald-400 transition-colors">Crédito Digital y BNPL (Cashea)</a></li>
-              <li><a href="#ecosystem" className="hover:text-emerald-400 transition-colors">Banca SUDEBAN (P2P / C2P)</a></li>
-              <li><a href="#ecosystem" className="hover:text-emerald-400 transition-colors">Billeteras y Remesas</a></li>
-            </ul>
-          </div>
-
-          {/* Menú Nav Esparcido 3 */}
-          <div className="md:col-span-2 space-y-3">
             <h4 className="text-xs uppercase font-medium tracking-widest text-white">Acceso</h4>
             <ul className="space-y-2 text-xs font-light">
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Iniciar Sesión</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Registro de Usuario</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Soporte Técnico</a></li>
+              <li>
+                <button onClick={onOpenAuth} className="hover:text-emerald-400 transition-colors text-left flex items-center gap-2">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                  Registro de Usuario
+                </button>
+              </li>
             </ul>
           </div>
 

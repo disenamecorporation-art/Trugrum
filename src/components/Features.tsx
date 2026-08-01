@@ -1,42 +1,48 @@
 import React from 'react';
-import { Cpu, BarChart3, Globe, Shield, Sparkles, Sliders, ArrowRight } from 'lucide-react';
+import { UserPlus, Wallet, FileText, CheckCircle2, MessageCircle, LineChart, ArrowRight } from 'lucide-react';
 
 export const Features: React.FC = () => {
   const features = [
     {
-      icon: <Cpu className="w-6 h-6 text-emerald-600" />,
-      title: "Inteligencia de Riqueza Automatizada",
-      description: "Reequilibrio de cartera auto-optimizado impulsado por modelos de IA multivariable que anticipan los cambios del mercado antes de que se registren a nivel mundial."
+      icon: <UserPlus className="w-6 h-6 text-emerald-600" />,
+      title: "Ir a registro",
+      description: "Crea tu cuenta en nuestra plataforma de manera rápida y segura para acceder al fondo de inversión.",
+      actionText: "Registrarse ahora"
     },
     {
-      icon: <BarChart3 className="w-6 h-6 text-emerald-600" />,
-      title: "Analítica Global en Tiempo Real",
-      description: "Telemetría de ultra baja latencia que transmite cada clase de activo, fondo de liquidez y curva de rendimiento directamente a su panel ejecutivo personal."
+      icon: <Wallet className="w-6 h-6 text-emerald-600" />,
+      title: "Realiza tu importe",
+      description: "Realiza tu importe desde 1 USDT, USDC en los datos de nuestro usuario BINANCE.",
+      actionText: "Ver datos"
     },
     {
-      icon: <Globe className="w-6 h-6 text-emerald-600" />,
-      title: "Transferencias Transfronterizas Instantáneas",
-      description: "Mueva capital entre más de 180 monedas soberanas instantáneamente con cero margen de cambio de divisas y compensación de cumplimiento automatizada."
+      icon: <FileText className="w-6 h-6 text-emerald-600" />,
+      title: "Rellena el formulario",
+      description: "Rellena el formulario y registra tu importe para que nuestro equipo valide tu ingreso.",
+      actionText: "Completar"
     },
     {
-      icon: <Shield className="w-6 h-6 text-emerald-600" />,
-      title: "Seguridad de Bóveda Cuántica",
-      description: "Criptografía post-cuántica combinada con almacenamiento en frío con firmas múltiples y verificación de claves de hardware biométricas."
+      icon: <CheckCircle2 className="w-6 h-6 text-emerald-600" />,
+      title: "Recibe tu comprobante",
+      description: "Recibe tu comprobante y políticas del fondo, garantizando la transparencia de tu activo.",
+      actionText: "Saber más"
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-emerald-600" />,
-      title: "Asesor IA Trugrum",
-      description: "Su estratega de banca privada 24/7 entrenado con décadas de datos macroeconómicos para responder consultas complejas de impuestos y estructuración de activos."
+      icon: <MessageCircle className="w-6 h-6 text-emerald-600" />,
+      title: "Comunidad de WhatsApp",
+      description: "Ingresa a nuestra comunidad de WhatsApp para interactuar y mantenerte informado.",
+      actionText: "Unirme al grupo"
     },
     {
-      icon: <Sliders className="w-6 h-6 text-emerald-600" />,
-      title: "Cosecha Fiscal Algorítmica",
-      description: "La recolección automatizada continua de pérdidas fiscales compensa algorítmicamente las ganancias de capital para maximizar sus rendimientos compuestos netos."
+      icon: <LineChart className="w-6 h-6 text-emerald-600" />,
+      title: "Informe diario",
+      description: "Recibe el informe diario de tus activos y sigue el crecimiento sostenido de tu capital.",
+      actionText: "Ver ejemplo"
     }
   ];
 
   return (
-    <section id="features" className="py-28 bg-white relative overflow-hidden">
+    <section id="paso-a-paso" className="py-28 bg-white relative overflow-hidden">
       
       {/* Elementos de brillo de fondo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none" />
@@ -45,14 +51,11 @@ export const Features: React.FC = () => {
         
         {/* Cabecera de Sección */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-light tracking-widest uppercase mb-4 shadow-sm">
-            <span>Diseñado para Ultra-Alto Rendimiento</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-light text-[#0B132B] tracking-tight mb-6">
-            Diseñado para los Arquitectos de la <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-[#00A859]">Riqueza Global</span>
+            Paso a paso para formar parte de <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-[#00A859]">nuestra plataforma</span>
           </h2>
           <p className="text-slate-600 font-light text-base sm:text-lg">
-            Cada característica dentro de Trugrum está meticulosamente diseñada para eliminar la fricción, asegurar activos soberanos y componer alfa.
+            Sigue estos simples pasos para integrar tu capital a nuestros proyectos emergentes y obtener rendimientos sostenidos.
           </p>
         </div>
 
@@ -76,7 +79,7 @@ export const Features: React.FC = () => {
               </p>
 
               <div className="flex items-center gap-2 text-xs text-emerald-600 font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-                <span>Explorar protocolo</span>
+                <span>{feature.actionText}</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
@@ -87,3 +90,4 @@ export const Features: React.FC = () => {
     </section>
   );
 };
+

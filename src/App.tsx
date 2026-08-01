@@ -57,10 +57,8 @@ export default function App() {
               onExploreDashboard={() => setActiveTab('dashboard')}
             />
             <VenezuelaServicesSlider />
-            <VenezuelaEcosystemInfo />
             <Features />
             <VenezuelaCtaBanner onOpenAuth={() => handleOpenAuth('register')} />
-            <LiveDashboardPreview />
           </>
         ) : (
           <div className="py-8">
@@ -70,7 +68,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenAuth={() => handleOpenAuth('register')} />
 
       {/* Modals */}
       <AuthModal
