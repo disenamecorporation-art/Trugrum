@@ -3,10 +3,10 @@ import { ArrowRight, ShieldCheck, TrendingUp, Zap, Globe2, Award, Landmark, Smar
 
 interface HeroProps {
   onGetStarted: () => void;
-  onExploreDashboard: () => void;
+  onExploreDashboard?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) => {
+export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
   return (
     <div className="relative overflow-hidden pt-20 pb-32 lg:pt-28 lg:pb-40 bg-gradient-to-br from-[#0B132B] via-[#131E3D] to-[#0B132B] text-slate-100">
       
@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
               Trugrum es una plataforma en modalidad de fondo de inversión orientada a la captación de criptoactivos (stablecoin USDT, USDC) vinculándolos a unidades de negocios, proyectos emergentes y de crecimiento sostenido, permitiendo rendimientos atractivos y el resguardo de los activos.
             </p>
 
-            {/* Botones CTA */}
+            {/* Botón CTA */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
               <button
                 onClick={onGetStarted}
@@ -39,28 +39,16 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onExploreDashboard }) 
                 <span>Registro directo</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-
-              <button
-                onClick={onExploreDashboard}
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#1C2541]/90 hover:bg-[#1C2541] text-blue-300 border border-blue-500/40 hover:border-blue-500/70 font-light text-sm tracking-wide shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <TrendingUp className="w-4 h-4 text-blue-400" />
-                <span>Explorar Servicios y Bancos</span>
-              </button>
             </div>
 
             {/* Métricas del Fondo */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-blue-500/20 max-w-lg mx-auto lg:mx-0">
+            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-blue-500/20 max-w-md mx-auto lg:mx-0">
               <div>
-                <div className="text-2xl sm:text-3xl font-light text-white">+18.5%</div>
-                <div className="text-xs text-slate-400 font-light mt-1">Rendimiento Anual</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-light text-blue-400">USDT/USDC</div>
+                <div className="text-2xl sm:text-3xl font-light text-blue-400">USDT / USDC</div>
                 <div className="text-xs text-slate-400 font-light mt-1">Activos Soportados</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-light text-white">100%</div>
+                <div className="text-2xl sm:text-3xl font-light text-white">100</div>
                 <div className="text-xs text-slate-400 font-light mt-1">Respaldo Real</div>
               </div>
             </div>

@@ -1,43 +1,37 @@
 import React from 'react';
-import { UserPlus, Wallet, FileText, CheckCircle2, MessageCircle, LineChart, ArrowRight } from 'lucide-react';
+import { UserPlus, Wallet, FileText, CheckCircle2, MessageCircle, LineChart } from 'lucide-react';
 
 export const Features: React.FC = () => {
   const features = [
     {
       icon: <UserPlus className="w-6 h-6 text-emerald-600" />,
       title: "Ir a registro",
-      description: "Crea tu cuenta en nuestra plataforma de manera rápida y segura para acceder al fondo de inversión.",
-      actionText: "Registrarse ahora"
+      description: "Crea tu cuenta en nuestra plataforma de manera rápida y segura para acceder al fondo de inversión."
     },
     {
       icon: <Wallet className="w-6 h-6 text-emerald-600" />,
       title: "Realiza tu importe",
-      description: "Realiza tu importe desde 1 USDT, USDC en los datos de nuestro usuario BINANCE.",
-      actionText: "Ver datos"
+      description: "Realiza tu importe desde 1 USDT, USDC en los datos de nuestro usuario BINANCE."
     },
     {
       icon: <FileText className="w-6 h-6 text-emerald-600" />,
       title: "Rellena el formulario",
-      description: "Rellena el formulario y registra tu importe para que nuestro equipo valide tu ingreso.",
-      actionText: "Completar"
+      description: "Rellena el formulario y registra tu importe para que nuestro equipo valide tu ingreso."
     },
     {
       icon: <CheckCircle2 className="w-6 h-6 text-emerald-600" />,
       title: "Recibe tu comprobante",
-      description: "Recibe tu comprobante y políticas del fondo, garantizando la transparencia de tu activo.",
-      actionText: "Saber más"
+      description: "Recibe tu comprobante y políticas del fondo, garantizando la transparencia de tu activo."
     },
     {
       icon: <MessageCircle className="w-6 h-6 text-emerald-600" />,
       title: "Comunidad de WhatsApp",
-      description: "Ingresa a nuestra comunidad de WhatsApp para interactuar y mantenerte informado.",
-      actionText: "Unirme al grupo"
+      description: "Ingresa a nuestra comunidad de WhatsApp para interactuar y mantenerte informado."
     },
     {
       icon: <LineChart className="w-6 h-6 text-emerald-600" />,
       title: "Informe diario",
-      description: "Recibe el informe diario de tus activos y sigue el crecimiento sostenido de tu capital.",
-      actionText: "Ver ejemplo"
+      description: "Recibe el informe diario de tus activos y sigue el crecimiento sostenido de tu capital."
     }
   ];
 
@@ -64,7 +58,7 @@ export const Features: React.FC = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="glass-card p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1.5 group cursor-pointer"
+              className="glass-card p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1.5 group"
             >
               <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/60 transition-colors">
                 {feature.icon}
@@ -74,14 +68,9 @@ export const Features: React.FC = () => {
                 {feature.title}
               </h3>
 
-              <p className="text-slate-600 font-light text-sm leading-relaxed mb-6">
+              <p className="text-slate-600 font-light text-sm leading-relaxed">
                 {feature.description}
               </p>
-
-              <div className="flex items-center gap-2 text-xs text-emerald-600 font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-                <span>{feature.actionText}</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
             </div>
           ))}
         </div>

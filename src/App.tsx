@@ -56,7 +56,7 @@ export default function App() {
               onGetStarted={() => handleOpenAuth('register')}
               onExploreDashboard={() => setActiveTab('dashboard')}
             />
-            <VenezuelaServicesSlider />
+            <VenezuelaServicesSlider onOpenAuth={() => handleOpenAuth('register')} />
             <Features />
             <VenezuelaCtaBanner onOpenAuth={() => handleOpenAuth('register')} />
           </>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, ArrowRight, ShieldCheck, DollarSign, FileText, Calendar, User as UserIcon, CheckCircle2, Globe, Phone, Mail, Hash, Key } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, ArrowRight, ArrowLeft, ShieldCheck, DollarSign, FileText, Calendar, User as UserIcon, CheckCircle2, Globe, Phone, Mail, Hash, Key } from 'lucide-react';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -26,6 +26,22 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     binanceEmail: ''
   });
 
+  // Manejar el botón de flecha atrás del navegador para cerrar el modal sin salir de la página
+  useEffect(() => {
+    if (isOpen) {
+      window.history.pushState({ modalOpen: true }, '');
+
+      const handlePopState = () => {
+        onClose();
+      };
+
+      window.addEventListener('popstate', handlePopState);
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -43,8 +59,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-5xl bg-white border border-emerald-500/30 rounded-3xl shadow-2xl overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-4 bg-slate-950/75 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full max-w-5xl bg-white border border-emerald-500/30 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden my-4 sm:my-auto max-h-[90vh] flex flex-col">
         
         {/* Resplandor ambiental */}
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none" />
@@ -53,25 +69,35 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         {/* Botón Cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-10 w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors shadow-sm"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors shadow-md"
+          aria-label="Cerrar"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 h-full relative z-1">
-          
-          {/* Formulario (Izquierda) */}
-          <div className="lg:col-span-3 p-8 sm:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 bg-white/80 backdrop-blur-sm">
-            <div className="mb-8">
-              <h2 className="text-2xl sm:text-3xl font-light text-[#0B132B] tracking-tight mb-2">
-                Realiza tu importe y se parte de <span className="font-medium text-emerald-600">nuestra plataforma</span>
-              </h2>
-              <p className="text-sm text-slate-500 font-light">
-                Completa el formulario para registrar tu importe. Tu solicitud será enviada directamente a nuestro equipo vía WhatsApp.
-              </p>
-            </div>
+        <div className="flex-1 overflow-y-auto custom-scrollbar">
+          <div className="grid grid-cols-1 lg:grid-cols-5 min-h-full relative z-1">
+            
+            {/* Formulario (Izquierda) */}
+            <div className="lg:col-span-3 p-4 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 bg-white/80 backdrop-blur-sm">
+              <div className="mb-6">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 text-slate-700 text-xs font-medium transition-all duration-200 border border-slate-200 mb-3 sm:mb-4"
+                >
+                  <ArrowLeft className="w-4 h-4 text-emerald-600" />
+                  <span>Volver a la página principal</span>
+                </button>
+                <h2 className="text-lg sm:text-2xl lg:text-3xl font-light text-[#0B132B] tracking-tight mb-2 pr-8 sm:pr-0">
+                  Realiza tu importe y se parte de <span className="font-medium text-emerald-600">nuestra plataforma</span>
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-500 font-light">
+                  Completa el formulario para registrar tu importe. Tu solicitud será enviada directamente a nuestro equipo vía WhatsApp.
+                </p>
+              </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
               
               {/* Sección Datos de Importe */}
               <div className="space-y-4">
@@ -79,7 +105,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <DollarSign className="w-4 h-4" /> Datos de Importe
                 </h3>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                   <div>
                     <label className="block text-xs font-medium text-slate-700 mb-1.5">USDT/USDC</label>
                     <select
@@ -139,7 +165,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <UserIcon className="w-4 h-4" /> Información Personal
                 </h3>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                   <div className="sm:col-span-2">
                     <label className="block text-xs font-medium text-slate-700 mb-1.5">Nombre y apellidos</label>
                     <input
@@ -229,8 +255,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   <span>Enviar y Registrar Importe</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-slate-500">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-slate-500 text-center">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                   <span>Al enviar, serás redirigido a WhatsApp para validar tu solicitud.</span>
                 </div>
               </div>
@@ -238,44 +264,44 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </div>
 
           {/* Información y QR (Derecha) */}
-          <div className="lg:col-span-2 bg-[#0B132B] text-white p-8 sm:p-10 flex flex-col justify-center items-center relative overflow-hidden">
+          <div className="lg:col-span-2 bg-[#0B132B] text-white p-6 sm:p-8 lg:p-10 flex flex-col justify-center items-center relative overflow-hidden">
             <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px]" />
 
-            <div className="relative z-10 w-full flex flex-col items-center text-center space-y-8">
+            <div className="relative z-10 w-full flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8">
               
               <div className="text-center">
                 <h3 className="text-xl font-light tracking-wide text-white mb-2">Cuenta Oficial</h3>
                 <div className="w-12 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto rounded-full" />
               </div>
 
-              <div className="bg-white p-4 rounded-2xl shadow-[0_0_40px_rgba(16,185,129,0.15)] inline-block transform hover:scale-105 transition-transform duration-500">
+              <div className="bg-white p-4 rounded-2xl shadow-[0_0_40px_rgba(16,185,129,0.15)] flex justify-center items-center mx-auto transform hover:scale-105 transition-transform duration-500">
                 <img 
-                  src="https://i.postimg.cc/Y97cWyFG/trugrum-binance.png" 
+                  src="https://i.postimg.cc/s2JKJfQG/qrtrugrum.png" 
                   alt="Binance QR"
-                  className="w-48 h-48 object-contain rounded-xl"
+                  className="w-44 h-44 sm:w-48 sm:h-48 object-contain rounded-xl mx-auto"
                 />
               </div>
 
-              <div className="w-full space-y-4 bg-slate-900/50 p-6 rounded-2xl border border-slate-800 backdrop-blur-md">
-                <div className="flex items-center justify-between text-sm">
+              <div className="w-full space-y-4 bg-slate-900/50 p-5 sm:p-6 rounded-2xl border border-slate-800 backdrop-blur-md">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-slate-400 font-light flex items-center gap-2">
                     <UserIcon className="w-4 h-4 text-emerald-400" /> Binance ID:
                   </span>
                   <span className="font-medium text-white">1141026626</span>
                 </div>
                 <div className="h-px w-full bg-slate-800" />
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="text-slate-400 font-light flex items-center gap-2">
                     <Mail className="w-4 h-4 text-emerald-400" /> Correo:
                   </span>
-                  <span className="font-medium text-white">informacion@trugrum.com</span>
+                  <span className="font-medium text-white break-all sm:break-normal">informacion@trugrum.com</span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-light text-slate-400 mt-4">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                Verifique los datos antes de realizar la transacción.
+              <div className="flex items-center justify-center gap-2 text-xs font-light text-slate-400 mt-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>Verifique los datos antes de realizar la transacción.</span>
               </div>
             </div>
           </div>
@@ -283,5 +309,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 };

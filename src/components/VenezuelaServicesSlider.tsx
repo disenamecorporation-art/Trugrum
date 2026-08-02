@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ShieldCheck, Zap, Globe, Smartphone, CreditCard, ArrowRight } from 'lucide-react';
 
-export const VenezuelaServicesSlider: React.FC = () => {
+interface VenezuelaServicesSliderProps {
+  onOpenAuth?: () => void;
+}
+
+export const VenezuelaServicesSlider: React.FC<VenezuelaServicesSliderProps> = ({ onOpenAuth }) => {
   const slides = [
     {
       title: "Alimentos",
@@ -34,7 +38,7 @@ export const VenezuelaServicesSlider: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 12000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -75,17 +79,17 @@ export const VenezuelaServicesSlider: React.FC = () => {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 p-8 sm:p-12 lg:p-16 max-w-2xl space-y-6">
+          <div className="relative z-10 p-6 sm:p-12 lg:p-16 max-w-2xl space-y-4 sm:space-y-6 pb-20 sm:pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-medium">
               {slide.icon}
               <span>{slide.badge}</span>
             </div>
 
-            <h3 className="text-2xl sm:text-4xl font-light text-white tracking-tight">
+            <h3 className="text-xl sm:text-4xl font-light text-white tracking-tight">
               {slide.title}
             </h3>
 
-            <p className="text-emerald-400 font-medium text-sm sm:text-base">
+            <p className="text-emerald-400 font-medium text-xs sm:text-base">
               {slide.subtitle}
             </p>
 
@@ -93,35 +97,35 @@ export const VenezuelaServicesSlider: React.FC = () => {
               {slide.description}
             </p>
 
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center gap-4 pt-2 sm:pt-4">
               <button 
-                onClick={() => alert(`Explorando detalles de: ${slide.title}`)}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-[#00E676] text-slate-950 font-medium text-xs tracking-wide shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all flex items-center gap-2"
+                onClick={onOpenAuth}
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-[#00E676] text-slate-950 font-medium text-xs tracking-wide shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all flex items-center gap-2 cursor-pointer"
               >
-                <span>Explorar Sector</span>
+                <span>Ir a registro</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
           {/* Navigation Controls */}
-          <div className="absolute bottom-6 right-6 z-20 flex items-center gap-3">
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 flex items-center gap-2 sm:gap-3">
             <button
               onClick={prevSlide}
-              className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors"
               aria-label="Anterior"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-            <div className="text-xs text-slate-300 font-light px-2">
+            <div className="text-xs text-slate-300 font-light px-1 sm:px-2">
               {currentIndex + 1} / {slides.length}
             </div>
             <button
               onClick={nextSlide}
-              className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors"
               aria-label="Siguiente"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
 
